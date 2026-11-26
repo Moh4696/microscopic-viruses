@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f6f1"><title>Microscopic Viruses · Inkworks</title>
+<meta name="description" content="Explore ten human viruses as interactive, labeled 3D cutaways. Learn what their parts do, the illnesses they cause and common symptoms.">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="atlas.css">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}</script></head>
+<body>
+<header class="top"><div class="brand"><span class="brandmark" aria-hidden="true">✳</span>Inkworks<span class="branddiv"></span><span class="brandtext">Science collection</span></div><button id="guide" class="plain">Field guide <span aria-hidden="true">↗</span></button></header>
+<main><div class="mast"><h1>Microscopic <em>Viruses</em></h1><p>Explore ten human viruses in 3D. Look inside each particle and discover the illness it causes.</p></div>
+<div class="bench">
+<nav class="index" aria-label="Virus index"><div class="bar"><span>Specimen index</span><span>10</span></div><div id="specimens"></div><label class="mobile-index">Choose a specimen<select id="mobileSpec"></select></label></nav>
+<section class="drawing" aria-labelledby="specName">
+<div class="stage" id="stage">
+<div class="titleblock"><div class="kicker"><i></i><span id="fig"></span></div><h2 id="specName"></h2><span class="family" id="family"></span></div>
+<canvas id="gl" tabindex="0" aria-label="Rotatable 3D virus. Use arrow keys to rotate."></canvas>
+<svg id="leaders" aria-hidden="true"></svg><div id="pins"></div><div id="fallback" hidden>3D rendering is unavailable in this browser. Explore the structures in the part index.</div>
+<div class="stagefoot"><span id="viewname">SECTIONAL VIEW</span><span>N.T.S.</span></div>
+</div>
+<div class="controls">
+<button id="cut" aria-pressed="true"><span aria-hidden="true">◐</span> Cutaway</button><button id="labels" aria-pressed="true"><span aria-hidden="true">⊙</span> Labels</button><button id="rotate" aria-pressed="false"><span aria-hidden="true">⟳</span> Rotate</button><button id="reset" title="Reset camera" aria-label="Reset camera">⌖</button><button id="expand" title="Figure view" aria-label="Figure view">⛶</button>
+</div><section class="viewer-index" aria-label="Model parts">
+<div id="viewerParts" class="viewer-parts"></div>
+<div id="viewerDetail" class="viewer-detail" aria-live="polite"></div>
+</section><div class="drawingcaption"><span>Drag to orbit <b>·</b> Scroll or pinch to zoom</span><span id="plate"></span></div>
+</section>
+<aside class="inspector"><div class="tabs"><button id="anatomyTab" aria-pressed="true">Anatomy</button><button id="illnessTab" aria-pressed="false">Illness &amp; symptoms</button></div>
+<div id="anatomy"><p class="intro" id="intro"></p><div class="subhead">Part index</div><div id="parts"></div><div class="specmeta"><div class="subhead">Genome</div><p id="genome"></p><div class="subhead">Particle shape</div><p id="shape"></p></div></div>
+<section id="clinical" hidden><div class="subhead">Disease caused</div><h3 id="disease"></h3><div class="subhead">Common symptoms</div><p id="symptoms"></p><div class="subhead">Possible complications</div><p id="effects"></p><a id="source" target="_blank" rel="noreferrer"></a></section>
+</aside></div><footer><span>Inkworks <b>/</b> Virology</span><span>Schematic models · Relative sizes vary by plate</span></footer></main>
+<dialog id="guideDialog"><button id="closeGuide" aria-label="Close field guide">×</button><div class="kicker"><i></i>Field guide</div><h2>Reading the atlas</h2><p>Choose a virus from the index. Select a numbered marker or a name in the part index to highlight the structure and read what it does. Labels follow visible structures as you rotate the model.</p><p>Use Cutaway to switch between the surface and interior. Drag to orbit, or focus the drawing and use the arrow keys. Use + and − to zoom.</p><p>Open Illness &amp; symptoms for each virus’s disease profile and its public-health source. Models use illustrative colors and enlarged details. The arrangement of genetic material is schematic.</p></dialog>
+<script type="module" src="js/atlas.js"></script></body></html>
